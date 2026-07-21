@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JSON Workspace is a fast, privacy-first JSON viewer, formatter, validator, comparer, and corrector for developers." />
+    <meta name="keywords" content="json viewer, json formatter, json validator, json compare, json corrector, developer tools, online json tools" />
+    <meta name="author" content="JSON Workspace" />
+    <meta name="theme-color" content="#3b82d4" />
+    <meta property="og:title" content="JSON Workspace - Fast JSON Developer Toolbox" />
+    <meta property="og:description" content="View, format, validate, compare, and correct JSON in one privacy-first desktop-style workspace." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="JSON Workspace - Fast JSON Developer Toolbox" />
+    <meta name="twitter:description" content="A modern JSON toolbox for viewing, formatting, validating, comparing, and correcting JSON locally in the browser." />
+    <title>JSON Workspace - Fast JSON Developer Toolbox</title>
+    <link rel="canonical" href="https://github.com/IshaanLabs/Json_Workplace" />
+    <!-- Anti-FOUC: Apply theme before React renders -->
+    <script>
+      ;(function () {
+        try {
+          var theme = localStorage.getItem('json-workspace-theme')
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+          }
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
