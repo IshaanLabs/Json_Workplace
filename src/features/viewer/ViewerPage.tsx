@@ -3,7 +3,6 @@ import { useStore } from '@/store'
 import { MonacoEditor } from '@/components/MonacoEditor'
 import { ClearButton } from '@/components/ClearButton'
 import { CopyButton } from '@/components/CopyButton'
-import { JsonStatusBadge } from '@/components/JsonStatusBadge'
 import { JsonTree } from './JsonTree'
 import { collectAllPaths, collectMatchingPaths } from './treeBuilder'
 import { jsonFormat } from '@/utils/jsonFormat'
@@ -53,7 +52,6 @@ export function ViewerPage() {
   const setViewMode = useStore((s) => s.setViewMode)
   const selectedNodePath = useStore((s) => s.selectedNodePath)
   const selectedNodeValue = useStore((s) => s.selectedNodeValue)
-  const setSelectedNode = useStore((s) => s.setSelectedNode)
   const clearSelectedNode = useStore((s) => s.clearSelectedNode)
 
   const addNotification = useStore((s) => s.addNotification)
@@ -167,8 +165,6 @@ export function ViewerPage() {
     navigator.clipboard.writeText(selectedNodeValue)
     addNotification({ type: 'success', message: 'Copied selected value.' })
   }, [addNotification, selectedNodeValue])
-
-  const hasTree = tree.length > 0
 
   return (
     <div className={cn('flex h-full flex-col', isFullscreen && 'viewer-fullscreen fixed inset-0 z-[1200] bg-[var(--color-background)]')}>
